@@ -29,8 +29,6 @@ namespace ChapAppMediator
 
             chatServer.RegisterUser(john);//registred
             chatServer.RegisterUser(doe);//registred
-
-
             chatServer.RegisterUser(andrew);//registered
             chatServer.RegisterUser(andrew1);//registered
             chatServer.RegisterUser(andrew2);//registered
@@ -39,17 +37,17 @@ namespace ChapAppMediator
             chatServer.RegisterUser(andrew5);//registered
             chatServer.RegisterUser(andrew6);//registered
             chatServer.RegisterUser(andrew7);//registered
+            chatServer.RegisterUser(john2);//too many users
             chatServer.RegisterUser(andrew8);//too many users
             chatServer.RegisterUser(andrew9);//too many users
             chatServer.Unregister(john);//unregister
 
             chatServer.RegisterUser(john1);//registered
-            chatServer.RegisterUser(john2);//too many users
             chatServer.RegisterUser(john3);//too many users
 
-            john.SendMessage("Test message");
-            andrew3.SendMessage("We get it!");
-
+            john.SendMessage("Test message");//message wont send because john unregistered
+            andrew3.SendMessage("We get it!");//every person in chatServer will recieve the message
+            andrew9.SendMessage("Can i?");//message wont send because andrew9 isnt registered
 
             Console.ReadLine();
         }
